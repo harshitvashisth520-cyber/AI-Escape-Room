@@ -1,0 +1,65 @@
+{
+  "room_name": "The Locked Library",
+  "intro": "You wake up on a cold stone floor. Dim candlelight flickers across towering bookshelves. The only door out is set into the far wall, its handle replaced by a four-digit keypad. You must find a way out.",
+  "objects": {
+    "desk": {
+      "description": "A heavy oak desk sits in the centre of the room. Its surface is scattered with yellowed papers, and one drawer is locked with a small combination dial.",
+      "examine": "You sift through the papers — they are blank. The desk's only interesting feature is the locked drawer with a four-digit combination dial."
+    },
+    "bookshelf": {
+      "description": "Towering bookshelves line one wall, crammed with hundreds of leather-bound volumes. Four books stand out — their spines are arranged slightly askew from the rest.",
+      "examine": "You pull out the four odd books. Inside the front cover of each, a number is scribbled in faded ink: 7, 3, 9, 1. The order matches how they sat on the shelf."
+    },
+    "painting": {
+      "description": "A large landscape painting hangs on the wall above the desk. The frame looks slightly crooked.",
+      "examine": "You lift the painting from its hook. Taped to the back is a small brass key and a scrap of paper that reads: 'For the drawer, if numbers fail you.'"
+    },
+    "drawer": {
+      "description": "The desk drawer is locked with a four-digit combination dial. There is also a keyhole beneath the dial.",
+      "examine": "You cannot see inside the drawer — it is firmly locked."
+    },
+    "door": {
+      "description": "A heavy oak door set into the far wall. Where a handle should be, there is a four-digit numeric keypad. A small red light glows beside it.",
+      "examine": "The keypad reads 'ENTER CODE'. The door will not budge without the correct four-digit code."
+    }
+  },
+  "items": {
+    "brass_key": {
+      "name": "Brass Key",
+      "description": "A small brass key found behind the painting."
+    },
+    "drawer_note": {
+      "name": "Folded Note",
+      "description": "A note found inside the drawer. It reads: 'The door code is 2 4 6 8.'"
+    }
+  },
+  "puzzles": {
+    "bookshelf": {
+      "solved_when": "examined",
+      "clue": "7, 3, 9, 1"
+    },
+    "painting": {
+      "solved_when": "examined",
+      "clue": "brass_key"
+    },
+    "drawer": {
+      "code": "7391",
+      "key_item": "brass_key",
+      "solved_when": "opened",
+      "contains": "drawer_note"
+    },
+    "door": {
+      "code": "2468",
+      "solved_when": "opened",
+      "is_final": true
+    }
+  },
+  "win_condition": "door opened",
+  "aliases": {
+    "desk": ["desk", "table", "oak desk"],
+    "bookshelf": ["bookshelf", "shelf", "book shelf", "books"],
+    "painting": ["painting", "picture", "art", "landscape"],
+    "drawer": ["drawer", "desk drawer"],
+    "door": ["door", "exit", "keypad"]
+  }
+}
